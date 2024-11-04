@@ -7,12 +7,23 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.material3.Checkbox
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 
 @Preview
 @Composable
-private fun ToppingCellPreview() {
+private fun ToppingCellPreviewNotOnPizza() {
+    ToppingCell(
+        topping = Topping.Pepperoni,
+        placement = null,
+        onClickTopping = {}
+    )
+}
+
+@Preview
+@Composable
+private fun ToppingCellPreviewOnLeftHalf() {
     ToppingCell(
         topping = Topping.Pepperoni,
         placement = ToppingPlacement.Left,
@@ -26,18 +37,23 @@ fun ToppingCell(
     placement: ToppingPlacement?,
     onClickTopping: () -> Unit
 ) {
-    Row {
+    Row (
+        verticalAlignment = Alignment.CenterVertically
+    ){
         Checkbox(
-            checked = true,
+            checked = placement != null,
             onCheckedChange = { }
         )
         Column {
             Text(
                 text = stringResource(topping.toppingName)
             )
-            Text(
-                text = "Whole pizza"
-            )
+            if (placement != null){
+                Text(
+                    text = stringResource(placement.label)
+                )
+            }
+
         }
     }
 }
