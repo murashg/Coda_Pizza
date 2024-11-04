@@ -1,5 +1,7 @@
 package android.bignerdranch.codapizza.ui
 
+import android.bignerdranch.codapizza.model.Topping
+import android.bignerdranch.codapizza.model.ToppingPlacement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.material3.Checkbox
@@ -10,11 +12,19 @@ import androidx.compose.ui.tooling.preview.Preview
 @Preview
 @Composable
 private fun ToppingCellPreview() {
-    ToppingCell()
+    ToppingCell(
+        topping = Topping.Pepperoni,
+        placement = ToppingPlacement.Left,
+        onClickTopping = {}
+    )
 }
 
 @Composable
-fun ToppingCell() {
+fun ToppingCell(
+    topping: Topping,
+    placement: ToppingPlacement?,
+    onClickTopping: () -> Unit
+) {
     Row {
         Checkbox(
             checked = true,
