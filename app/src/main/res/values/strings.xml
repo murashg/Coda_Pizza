@@ -11,5 +11,5 @@
     <string name="topping_olive">Olives</string>
     <string name="topping_peppers">Peppers</string>
     <string name="topping_pepperoni">Pepperoni</string>
-    <string name="pineapple">Pineapple</string>
+    <string name="topping_pineapple">Pineapple</string>
 </resources>

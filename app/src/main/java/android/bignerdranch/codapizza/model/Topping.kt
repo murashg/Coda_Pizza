@@ -1,5 +1,6 @@
 package android.bignerdranch.codapizza.model
 
+import android.bignerdranch.codapizza.R
 import androidx.annotation.StringRes
 
 enum class Topping(
