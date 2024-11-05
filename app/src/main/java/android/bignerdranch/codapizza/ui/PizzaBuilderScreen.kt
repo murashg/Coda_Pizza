@@ -1,6 +1,7 @@
 package android.bignerdranch.codapizza.ui
 
 import android.bignerdranch.codapizza.R
+import android.bignerdranch.codapizza.model.Pizza
 import android.bignerdranch.codapizza.model.Topping
 import android.bignerdranch.codapizza.model.ToppingPlacement
 import androidx.compose.foundation.layout.Column
@@ -37,6 +38,14 @@ fun PizzaBuilderScreen(
     }
 }
 
+private var pizza =
+    Pizza(
+        toppings = mapOf(
+            Topping.Pepperoni to ToppingPlacement.All,
+            Topping.Pineapple to ToppingPlacement.All
+        )
+    )
+
 @Composable
 private fun ToppingsList(
     modifier: Modifier = Modifier
@@ -44,10 +53,10 @@ private fun ToppingsList(
     LazyColumn(
         modifier = modifier
     ) {
-        items(Topping.values()) { topping ->
+        items(Topping.entries.toTypedArray()) { topping ->
             ToppingCell(
                 topping = topping,
-                placement = ToppingPlacement.Left,
+                placement = pizza.toppings[topping],
                 onClickTopping = {
                     //TODO
                 }
