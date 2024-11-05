@@ -26,10 +26,13 @@ import androidx.compose.runtime.setValue
 fun PizzaBuilderScreen(
     modifier: Modifier = Modifier
 ){
+    var pizza by remember { mutableStateOf(Pizza()) }
     Column(
         modifier = modifier
     ){
         ToppingsList(
+            pizza = pizza,
+            onEditPizza = { pizza = it },
             modifier = Modifier
                 .fillMaxWidth()
                 .weight(1f, fill = true)
@@ -44,9 +47,10 @@ fun PizzaBuilderScreen(
 
 @Composable
 private fun ToppingsList(
+    pizza: Pizza,
+    onEditPizza: (Pizza) -> Unit,
     modifier: Modifier = Modifier
 ){
-    var pizza by remember { mutableStateOf(Pizza()) }
     LazyColumn(
         modifier = modifier
     ) {
@@ -56,17 +60,16 @@ private fun ToppingsList(
                 placement = pizza.toppings[topping],
                 onClickTopping = {
                     val isOnPizza = pizza.toppings[topping] != null
-                    pizza = pizza.withTopping(
+                    onEditPizza(pizza.withTopping(
                         topping = topping,
                         placement = if (isOnPizza) {
                             null
                         } else {
                             ToppingPlacement.All
                         }
-                    )
+                    ))
                 }
             )
-
         }
     }
 }
