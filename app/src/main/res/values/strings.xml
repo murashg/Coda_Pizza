@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Coda Pizza</string>
 
+    <string name="place_order_button">Place Order</string>
+
     <string name="placement_none">None</string>
     <string name="placement_left">Left half</string>
     <string name="placement_right">Right</string>
