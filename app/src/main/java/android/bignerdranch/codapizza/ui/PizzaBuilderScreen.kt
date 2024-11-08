@@ -39,6 +39,7 @@ fun PizzaBuilderScreen(
                 .weight(1f, fill = true)
         )
         OrderButton(
+            pizza = pizza,
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(16.dp)
@@ -86,7 +87,7 @@ private fun OrderButton(
             // TODO
         }
     ) {
-        val currencyFormatter = NumberFormat.getCurrencyInstance()
+        val currencyFormatter = remember { NumberFormat.getCurrencyInstance() }
         val price = currencyFormatter.format(pizza.price)
         Text(
             text = stringResource(R.string.place_order_button, price)
