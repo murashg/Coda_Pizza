@@ -20,6 +20,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import java.text.NumberFormat
 
 @Preview
 @Composable
@@ -76,6 +77,7 @@ private fun ToppingsList(
 
 @Composable
 private fun OrderButton(
+    pizza: Pizza,
     modifier: Modifier = Modifier
 ){
     Button(
@@ -84,8 +86,10 @@ private fun OrderButton(
             // TODO
         }
     ) {
+        val currencyFormatter = NumberFormat.getCurrencyInstance()
+        val price = currencyFormatter.format(pizza.price)
         Text(
-            text = stringResource(R.string.place_order_button)
+            text = stringResource(R.string.place_order_button, price)
                 .uppercase()
         )
     }
