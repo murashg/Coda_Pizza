@@ -94,7 +94,9 @@ private fun OrderButton(
         val currencyFormatter = remember { NumberFormat.getCurrencyInstance() }
         val price = currencyFormatter.format(pizza.price)
         Text(
-            text = stringResource(R.string.place_order_button, price)
+            text = stringResource(R.string.place_order_button,
+                price,
+                stringResource(pizza.size.sizeName))
                 .uppercase()
         )
     }

@@ -28,4 +28,10 @@ data class Pizza(
             }
         )
     }
+
+    fun setSize(dropDownSizeSelect: Size): Pizza {
+        return copy(
+            size = dropDownSizeSelect
+        )
+    }
 }
