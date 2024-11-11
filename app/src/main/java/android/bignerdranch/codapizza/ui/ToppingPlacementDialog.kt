@@ -20,6 +20,7 @@ import androidx.compose.ui.window.Dialog
 @Composable
 fun ToppingPlacementDialog(
     topping: Topping,
+    onSetToppingPlacement: (placement: ToppingPlacement?) -> Unit,
     onDismissRequest: () -> Unit
 ) {
     Dialog(onDismissRequest = onDismissRequest) {
@@ -36,6 +37,7 @@ fun ToppingPlacementDialog(
                 ToppingPlacementOption(
                     placementName = placement.label,
                     onClick = {
+                        onSetToppingPlacement(placement)
                         onDismissRequest()
                     }
                 )
@@ -43,6 +45,7 @@ fun ToppingPlacementDialog(
             ToppingPlacementOption(
                 placementName = R.string.placement_none,
                 onClick = {
+                    onSetToppingPlacement(null)
                     onDismissRequest()
                 }
             )
