@@ -12,7 +12,7 @@ data class Pizza(
     val size: Size = Size.Large
 ) : Parcelable {
     val price: Double
-        get() = priceOfSize(size) + toppings.asSequence()
+        get() = size.price + toppings.asSequence()
             .sumOf { (_, toppingPlacement) ->
                 when (toppingPlacement) {
                     Left, Right -> 0.5
@@ -27,12 +27,5 @@ data class Pizza(
                 toppings + (topping to placement)
             }
         )
-    }
-
-    private fun priceOfSize(size: Size) = when(size){
-        Size.Small -> 7.99
-        Size.Medium -> 9.99
-        Size.Large -> 14.99
-        Size.ExtraLarge -> 19.99
     }
 }
