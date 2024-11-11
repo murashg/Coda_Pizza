@@ -54,6 +54,7 @@ private fun ToppingsList(
     onEditPizza: (Pizza) -> Unit,
     modifier: Modifier = Modifier
 ){
+    ToppingPlacementDialog()
     LazyColumn(
         modifier = modifier
     ) {
