@@ -3,8 +3,6 @@ package android.bignerdranch.codapizza.ui
 import android.bignerdranch.codapizza.R
 import android.bignerdranch.codapizza.model.Pizza
 import android.bignerdranch.codapizza.model.Size
-import android.bignerdranch.codapizza.model.Topping
-import android.bignerdranch.codapizza.model.ToppingPlacement
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -43,9 +41,10 @@ fun PizzaSizeDropdown(
         Row(
             horizontalArrangement = Arrangement.Center,
             verticalAlignment = Alignment.CenterVertically,
-            modifier = Modifier.clickable {
-                isDropDownExpanded = true
-            }
+            modifier = Modifier
+                .clickable {
+                    isDropDownExpanded = true
+                }
         ) {
             Text(
                 text = stringResource(R.string.size_dropdown_prompt),
@@ -89,10 +88,7 @@ fun PizzaSizeDropdown(
 private fun PizzaSizeDropdownMedium() {
     PizzaSizeDropdown(
         Pizza(
-            toppings = mapOf(Topping.Pepperoni to ToppingPlacement.Right,
-                Topping.Pineapple to ToppingPlacement.Right,
-                Topping.Basil to ToppingPlacement.Left,
-                Topping.Peppers to ToppingPlacement.All),
+            toppings = emptyMap(),
             size = Size.Medium
         ),
         onEditPizza = {},
