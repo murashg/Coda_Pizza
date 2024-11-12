@@ -48,7 +48,7 @@ fun PizzaSizeDropdown(
             }
         ) {
             Text(
-                text = "Pizza Size",
+                text = stringResource(R.string.size_dropdown_prompt),
                 style = MaterialTheme.typography.titleMedium
             )
             Image(

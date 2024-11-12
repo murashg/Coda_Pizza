@@ -1,7 +1,11 @@
 <resources>
     <string name="app_name">Coda Pizza</string>
 
+    <string name="header">Coda Pizza by Greg Murashige</string>
+
     <string name="place_order_button">Place %1$s Pizza Order (%2$s)</string>
+
+    <string name="size_dropdown_prompt">Pizza Size</string>
 
     <string name="placement_prompt">Where do you want %1$s on your pizza?</string>
     <string name="placement_none">None</string>
