@@ -1,11 +1,12 @@
 <resources>
     <string name="app_name">Coda Pizza</string>
 
-    <string name="place_order_button">Place Order</string>
+    <string name="place_order_button">Place %1$s Pizza Order (%2$s)</string>
 
+    <string name="placement_prompt">Where do you want %1$s on your pizza?</string>
     <string name="placement_none">None</string>
     <string name="placement_left">Left half</string>
-    <string name="placement_right">Right</string>
+    <string name="placement_right">Right half</string>
     <string name="placement_all">Whole pizza</string>
 
     <string name="topping_basil">Basil</string>
@@ -14,4 +15,9 @@
     <string name="topping_peppers">Peppers</string>
     <string name="topping_pepperoni">Pepperoni</string>
     <string name="topping_pineapple">Pineapple</string>
+
+    <string name="size_s">Small</string>
+    <string name="size_m">Medium</string>
+    <string name="size_l">Large</string>
+    <string name="size_xl">Extra Large</string>
 </resources>
