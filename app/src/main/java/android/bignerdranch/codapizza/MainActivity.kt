@@ -1,8 +1,6 @@
 package android.bignerdranch.codapizza
 
-import android.bignerdranch.codapizza.model.Topping
-import android.bignerdranch.codapizza.model.ToppingPlacement
-import android.bignerdranch.codapizza.ui.ToppingCell
+import android.bignerdranch.codapizza.ui.PizzaBuilderScreen
 import android.bignerdranch.codapizza.ui.theme.CodaPizzaTheme
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -15,11 +13,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             CodaPizzaTheme {
-                ToppingCell(
-                    topping = Topping.Pepperoni,
-                    placement = ToppingPlacement.Left,
-                    onClickTopping = {}
-                )
+                PizzaBuilderScreen()
             }
         }
     }
