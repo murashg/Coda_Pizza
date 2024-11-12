@@ -9,18 +9,18 @@ enum class Size(
 ) {
     Small(
         sizeName = R.string.size_s,
-        price = 7.99
+        price = R.string.price_size_small.toDouble()
     ),
     Medium(
         sizeName = R.string.size_m,
-        price = 9.99
+        price = R.string.price_size_medium.toDouble()
     ),
     Large(
         sizeName = R.string.size_l,
-        price = 14.99
+        price = R.string.price_size_large.toDouble()
     ),
     ExtraLarge(
         sizeName = R.string.size_xl,
-        price = 19.99
+        price = R.string.price_size_extra_large.toDouble()
     );
 }
