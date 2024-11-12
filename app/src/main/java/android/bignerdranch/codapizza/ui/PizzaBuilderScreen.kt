@@ -3,12 +3,15 @@ package android.bignerdranch.codapizza.ui
 import android.bignerdranch.codapizza.R
 import android.bignerdranch.codapizza.model.Pizza
 import android.bignerdranch.codapizza.model.Topping
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Button
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -31,6 +34,21 @@ fun PizzaBuilderScreen(
     Column(
         modifier = modifier
     ){
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .background(color = MaterialTheme.colorScheme.secondaryContainer)
+                .padding(16.dp)
+        ){
+            Text(
+                text = "Coda Pizza by Greg Murashige"
+            )
+        }
+        PizzaSizeDropdown(
+            pizza = pizza,
+            onEditPizza = { pizza = it },
+            modifier = Modifier
+        )
         ToppingsList(
             pizza = pizza,
             onEditPizza = { pizza = it },
