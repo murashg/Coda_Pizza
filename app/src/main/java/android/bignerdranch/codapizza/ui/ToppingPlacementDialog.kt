@@ -18,16 +18,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 
-@Preview
-@Composable
-private fun ToppingPlacementDialogPepperoni() {
-    ToppingPlacementDialog(
-        topping = Topping.Pepperoni,
-        onSetToppingPlacement = {},
-        onDismissRequest = {}
-    )
-}
-
 @Composable
 fun ToppingPlacementDialog(
     topping: Topping,
@@ -81,4 +71,14 @@ private fun ToppingPlacementOption(
                 .padding(8.dp)
         )
     }
+}
+
+@Preview
+@Composable
+private fun ToppingPlacementDialogPepperoni() {
+    ToppingPlacementDialog(
+        topping = Topping.Pepperoni,
+        onSetToppingPlacement = {},
+        onDismissRequest = {}
+    )
 }
