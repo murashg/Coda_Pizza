@@ -15,33 +15,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-
-@Preview
-@Composable
-private fun ToppingCellPreviewNotOnPizza() {
-    ToppingCell(
-        topping = Topping.Pepperoni,
-        placement = null,
-        onClickTopping = {}
-    )
-}
-
-@Preview
-@Composable
-private fun ToppingCellPreviewOnLeftHalf() {
-    ToppingCell(
-        topping = Topping.Pepperoni,
-        placement = ToppingPlacement.Left,
-        onClickTopping = {}
-    )
-}
+import java.text.NumberFormat
 
 @Composable
 fun ToppingCell(
     topping: Topping,
     placement: ToppingPlacement?,
     modifier: Modifier = Modifier,
-    onClickTopping: () -> Unit
+    onClickTopping: () -> Unit,
+    currencyFormatter: NumberFormat
 ) {
     Row (
         verticalAlignment = Alignment.CenterVertically,
@@ -64,11 +46,32 @@ fun ToppingCell(
             )
             if (placement != null){
                 Text(
-                    text = stringResource(placement.label),
+                    text = stringResource(placement.label, currencyFormatter.format(placement.price * topping.price)),
                     style = MaterialTheme.typography.bodySmall
-
                 )
             }
         }
     }
+}
+
+@Preview
+@Composable
+private fun ToppingCellPreviewNotOnPizza() {
+    ToppingCell(
+        topping = Topping.Pepperoni,
+        placement = null,
+        onClickTopping = {},
+        currencyFormatter = NumberFormat.getCurrencyInstance()
+    )
+}
+
+@Preview
+@Composable
+private fun ToppingCellPreviewOnLeftHalf() {
+    ToppingCell(
+        topping = Topping.Pepperoni,
+        placement = ToppingPlacement.Left,
+        onClickTopping = {},
+        currencyFormatter = NumberFormat.getCurrencyInstance()
+    )
 }

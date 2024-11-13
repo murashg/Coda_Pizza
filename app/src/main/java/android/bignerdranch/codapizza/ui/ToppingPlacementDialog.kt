@@ -17,12 +17,14 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
+import java.text.NumberFormat
 
 @Composable
 fun ToppingPlacementDialog(
     topping: Topping,
     onSetToppingPlacement: (placement: ToppingPlacement?) -> Unit,
-    onDismissRequest: () -> Unit
+    onDismissRequest: () -> Unit,
+    currencyFormatter: NumberFormat
 ) {
     Dialog(onDismissRequest = onDismissRequest) {
         Card {
@@ -37,6 +39,7 @@ fun ToppingPlacementDialog(
             ToppingPlacement.entries.forEach { placement ->
                 ToppingPlacementOption(
                     placementName = placement.label,
+                    placementPrice = currencyFormatter.format(topping.price * placement.price),
                     onClick = {
                         onSetToppingPlacement(placement)
                         onDismissRequest()
@@ -45,6 +48,7 @@ fun ToppingPlacementDialog(
             }
             ToppingPlacementOption(
                 placementName = R.string.placement_none,
+                placementPrice = currencyFormatter.format(0),
                 onClick = {
                     onSetToppingPlacement(null)
                     onDismissRequest()
@@ -57,6 +61,7 @@ fun ToppingPlacementDialog(
 @Composable
 private fun ToppingPlacementOption(
     @StringRes placementName: Int,
+    placementPrice: String,
     onClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {
@@ -66,7 +71,7 @@ private fun ToppingPlacementOption(
             .fillMaxWidth()
     ) {
         Text(
-            text = stringResource(placementName),
+            text = stringResource(placementName, placementPrice),
             modifier = Modifier
                 .padding(8.dp)
         )
@@ -79,6 +84,7 @@ private fun ToppingPlacementDialogPepperoni() {
     ToppingPlacementDialog(
         topping = Topping.Pepperoni,
         onSetToppingPlacement = {},
+        currencyFormatter = NumberFormat.getCurrencyInstance(),
         onDismissRequest = {}
     )
 }

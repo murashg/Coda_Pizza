@@ -13,6 +13,7 @@ import java.text.NumberFormat
 @Composable
 fun OrderButton(
     pizza: Pizza,
+    currencyFormatter: NumberFormat,
     modifier: Modifier = Modifier
 ){
     Button(
@@ -21,7 +22,6 @@ fun OrderButton(
             // TODO
         }
     ) {
-        val currencyFormatter = remember { NumberFormat.getCurrencyInstance() }
         val price = currencyFormatter.format(pizza.price)
         Text(
             text = stringResource(

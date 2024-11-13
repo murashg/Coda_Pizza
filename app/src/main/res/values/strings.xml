@@ -12,9 +12,9 @@
 
     <string name="placement_prompt">Where do you want %1$s on your pizza?</string>
     <string name="placement_none">None</string>
-    <string name="placement_left">Left half</string>
-    <string name="placement_right">Right half</string>
-    <string name="placement_all">Whole pizza</string>
+    <string name="placement_left">Left half (%1$s)</string>
+    <string name="placement_right">Right half (%1$s)</string>
+    <string name="placement_all">Whole pizza (%1$s)</string>
 
     <string name="topping_basil">Basil</string>
     <string name="topping_mushroom">Mushrooms</string>
@@ -27,4 +27,8 @@
     <string name="size_m">Medium</string>
     <string name="size_l">Large</string>
     <string name="size_xl">Extra Large</string>
+    <string name="size_s_with_price">Small (%1$s)</string>
+    <string name="size_m_with_price">Medium (%1$s)</string>
+    <string name="size_l_with_price">Large (%1$s)</string>
+    <string name="size_xl_with_price">Extra Large (%1$s)</string>
 </resources>

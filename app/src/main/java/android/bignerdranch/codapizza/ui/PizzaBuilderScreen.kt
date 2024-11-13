@@ -15,12 +15,14 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import java.text.NumberFormat
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Preview
@@ -54,6 +56,7 @@ private fun PizzaBuilderContent(
     modifier: Modifier = Modifier
 ) {
     var pizza by rememberSaveable { mutableStateOf(Pizza()) }
+    val currencyFormatter = remember { NumberFormat.getCurrencyInstance() }
     Column(
         modifier = modifier
             .padding(paddingValues)
@@ -61,17 +64,20 @@ private fun PizzaBuilderContent(
         PizzaSizeDropdown(
             pizza = pizza,
             onEditPizza = { pizza = it },
+            currencyFormatter = currencyFormatter,
             modifier = Modifier
         )
         ToppingsList(
             pizza = pizza,
             onEditPizza = { pizza = it },
+            currencyFormatter = currencyFormatter,
             modifier = Modifier
                 .fillMaxWidth()
                 .weight(1f, fill = true)
         )
         OrderButton(
             pizza = pizza,
+            currencyFormatter = currencyFormatter,
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(16.dp)

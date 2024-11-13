@@ -12,11 +12,13 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import java.text.NumberFormat
 
 @Composable
 fun ToppingsList(
     pizza: Pizza,
     onEditPizza: (Pizza) -> Unit,
+    currencyFormatter: NumberFormat,
     modifier: Modifier = Modifier
 ) {
     var toppingBeingAdded by rememberSaveable { mutableStateOf<Topping?>(null) }
@@ -28,7 +30,8 @@ fun ToppingsList(
             },
             onDismissRequest = {
                 toppingBeingAdded = null
-            }
+            },
+            currencyFormatter = currencyFormatter
         )
     }
     LazyColumn(
@@ -47,7 +50,8 @@ fun ToppingsList(
                 placement = pizza.toppings[topping],
                 onClickTopping = {
                     toppingBeingAdded = topping
-                }
+                },
+                currencyFormatter = currencyFormatter
             )
         }
     }
