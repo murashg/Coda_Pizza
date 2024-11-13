@@ -1,27 +1,42 @@
 package android.bignerdranch.codapizza.model
 
 import android.bignerdranch.codapizza.R
+import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 
 enum class Topping(
-    @StringRes val toppingName: Int
+    @StringRes val toppingName: Int,
+    @DrawableRes val pizzaOverlayImage: Int,
+    val price: Double //per whole pizza
 ) {
     Basil(
-        toppingName = R.string.topping_basil
+        toppingName = R.string.topping_basil,
+        pizzaOverlayImage = R.drawable.topping_basil,
+        price = 1.0
     ),
     Mushroom(
-        toppingName = R.string.topping_mushroom
+        toppingName = R.string.topping_mushroom,
+        pizzaOverlayImage = R.drawable.topping_mushroom,
+        price = 1.0
     ),
     Olive(
-        toppingName = R.string.topping_olive
+        toppingName = R.string.topping_olive,
+        pizzaOverlayImage = R.drawable.topping_olive,
+        price = 1.0
     ),
     Peppers(
-        toppingName = R.string.topping_peppers
+        toppingName = R.string.topping_peppers,
+        pizzaOverlayImage = R.drawable.topping_peppers,
+        price = 1.0
     ),
     Pepperoni(
-        toppingName = R.string.topping_pepperoni
+        toppingName = R.string.topping_pepperoni,
+        pizzaOverlayImage = R.drawable.topping_pepperoni,
+        price = 1.0
     ),
     Pineapple(
-        toppingName = R.string.topping_pineapple
+        toppingName = R.string.topping_pineapple,
+        pizzaOverlayImage = R.drawable.topping_pineapple,
+        price = 1.0
     )
 }

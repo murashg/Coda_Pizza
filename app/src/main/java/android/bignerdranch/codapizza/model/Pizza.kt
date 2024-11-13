@@ -1,9 +1,5 @@
 package android.bignerdranch.codapizza.model
 
-import android.bignerdranch.codapizza.R
-import android.bignerdranch.codapizza.model.ToppingPlacement.All
-import android.bignerdranch.codapizza.model.ToppingPlacement.Left
-import android.bignerdranch.codapizza.model.ToppingPlacement.Right
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
@@ -14,11 +10,8 @@ data class Pizza(
 ) : Parcelable {
     val price: Double
         get() = size.price + toppings.asSequence()
-            .sumOf { (_, toppingPlacement) ->
-                when (toppingPlacement) {
-                    Left, Right -> R.string.price_placement_half.toDouble()
-                    All -> R.string.price_placement_whole.toDouble()
-                }
+            .sumOf { (topping, toppingPlacement) ->
+                toppingPlacement.price * topping.price
             }
     fun withTopping(topping: Topping, placement: ToppingPlacement?): Pizza {
         return copy(
