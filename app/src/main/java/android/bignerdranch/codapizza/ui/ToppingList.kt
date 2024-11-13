@@ -2,7 +2,6 @@ package android.bignerdranch.codapizza.ui
 
 import android.bignerdranch.codapizza.model.Pizza
 import android.bignerdranch.codapizza.model.Topping
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
@@ -11,7 +10,6 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
 import java.text.NumberFormat
 
 @Composable
