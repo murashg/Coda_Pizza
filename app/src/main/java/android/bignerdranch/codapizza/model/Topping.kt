@@ -12,31 +12,33 @@ enum class Topping(
     Basil(
         toppingName = R.string.topping_basil,
         pizzaOverlayImage = R.drawable.topping_basil,
-        price = 1.0
+        price = 0.5
     ),
     Mushroom(
         toppingName = R.string.topping_mushroom,
         pizzaOverlayImage = R.drawable.topping_mushroom,
-        price = 1.0
+        price = .75
     ),
     Olive(
         toppingName = R.string.topping_olive,
         pizzaOverlayImage = R.drawable.topping_olive,
-        price = 1.0
+        price = 0.99
+
+
     ),
     Peppers(
         toppingName = R.string.topping_peppers,
         pizzaOverlayImage = R.drawable.topping_peppers,
-        price = 1.0
+        price = 0.75
     ),
     Pepperoni(
         toppingName = R.string.topping_pepperoni,
         pizzaOverlayImage = R.drawable.topping_pepperoni,
-        price = 1.0
+        price = 1.99
     ),
     Pineapple(
         toppingName = R.string.topping_pineapple,
         pizzaOverlayImage = R.drawable.topping_pineapple,
-        price = 1.0
+        price = 0.99
     )
 }

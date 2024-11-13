@@ -25,11 +25,13 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import java.text.NumberFormat
 
 @Composable
 fun PizzaSizeDropdown(
     pizza: Pizza,
     onEditPizza: (Pizza) -> Unit,
+    currencyFormatter: NumberFormat,
     modifier: Modifier = Modifier
 ) {
     var isDropDownExpanded by rememberSaveable { mutableStateOf(false) }
@@ -66,7 +68,7 @@ fun PizzaSizeDropdown(
                 DropdownMenuItem(
                     text = {
                         Text(
-                            text = stringResource(size.sizeName),
+                            text = stringResource(size.sizeNameWithPrice, currencyFormatter.format(size.price)),
                             modifier = Modifier
                                 .padding(8.dp)
                         )
@@ -92,6 +94,7 @@ private fun PizzaSizeDropdownMedium() {
             size = Size.Medium
         ),
         onEditPizza = {},
+        NumberFormat.getCurrencyInstance(),
         modifier = Modifier
     )
 }
