@@ -27,12 +27,4 @@
     <string name="size_m">Medium</string>
     <string name="size_l">Large</string>
     <string name="size_xl">Extra Large</string>
-
-    <string name="price_placement_half">0.5</string>
-    <string name="price_placement_whole">1.0</string>
-
-    <string name="price_size_small">7.99</string>
-    <string name="price_size_medium">9.99</string>
-    <string name="price_size_large">14.99</string>
-    <string name="price_size_extra_large">19.99</string>
 </resources>

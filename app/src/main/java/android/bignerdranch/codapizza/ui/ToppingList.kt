@@ -2,6 +2,7 @@ package android.bignerdranch.codapizza.ui
 
 import android.bignerdranch.codapizza.model.Pizza
 import android.bignerdranch.codapizza.model.Topping
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
@@ -10,6 +11,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 
 @Composable
 fun ToppingsList(
@@ -32,6 +34,13 @@ fun ToppingsList(
     LazyColumn(
         modifier = modifier
     ) {
+        item {
+            PizzaHeroImage(
+                pizza = pizza,
+                modifier = Modifier
+                    .padding(16.dp)
+            )
+        }
         items(Topping.entries.toTypedArray()) { topping ->
             ToppingCell(
                 topping = topping,
