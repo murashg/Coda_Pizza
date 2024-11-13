@@ -67,6 +67,11 @@ private fun PizzaBuilderContent(
             currencyFormatter = currencyFormatter,
             modifier = Modifier
         )
+        PizzaHeroImage(
+            pizza = pizza,
+            modifier = Modifier
+                .padding(8.dp)
+        )
         ToppingsList(
             pizza = pizza,
             onEditPizza = { pizza = it },
@@ -77,6 +82,7 @@ private fun PizzaBuilderContent(
         )
         OrderButton(
             pizza = pizza,
+            onEditPizza = { pizza = it },
             currencyFormatter = currencyFormatter,
             modifier = Modifier
                 .fillMaxWidth()

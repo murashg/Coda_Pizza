@@ -28,4 +28,8 @@ data class Pizza(
             size = dropDownSizeSelect
         )
     }
+
+    fun clearPizza(): Pizza {
+        return Pizza()
+    }
 }

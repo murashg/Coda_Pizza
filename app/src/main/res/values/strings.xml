@@ -31,4 +31,6 @@
     <string name="size_m_with_price">Medium (%1$s)</string>
     <string name="size_l_with_price">Large (%1$s)</string>
     <string name="size_xl_with_price">Extra Large (%1$s)</string>
+
+    <string name="order_placed_toast">Order Submitted!</string>
 </resources>
