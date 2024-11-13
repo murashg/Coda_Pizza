@@ -6,6 +6,9 @@
     <string name="place_order_button">Place %1$s Pizza Order (%2$s)</string>
 
     <string name="size_dropdown_prompt">Pizza Size</string>
+    <string name="size_dropdown_ic_description">PizzaSizeDropdownIcon</string>
+
+    <string name="pizza_preview">Pizza preview</string>
 
     <string name="placement_prompt">Where do you want %1$s on your pizza?</string>
     <string name="placement_none">None</string>

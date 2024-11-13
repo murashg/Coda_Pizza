@@ -52,7 +52,7 @@ fun PizzaSizeDropdown(
             )
             Image(
                 painter = painterResource(R.drawable.drop_down_ic),
-                contentDescription = "DropDownIcon"
+                contentDescription = stringResource(R.string.size_dropdown_ic_description)
             )
         }
         DropdownMenu(
